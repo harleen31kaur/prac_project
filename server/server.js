@@ -13,9 +13,13 @@ const connectDb=require("./config/dbConnection")
 const errorHandler=require('./middlewares/errorHandler')
 const cors=require("cors"); 
 
+//env file config
+const dotenv=require("dotenv");
+dotenv. config();
+
 connectDb();
 const app=express();
-const port =process.env.port || 5000; 
+const port =process.env.PORT || 5000; 
 
 
 app.use(express.json());

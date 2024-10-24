@@ -6,9 +6,12 @@
     <title>All Users</title>
 </head>
 <body>
+
+    {{> header}}
+    
     <h1>All Users</h1>
     <ul>
-        {{#each users}}
+        {{#each users}}   <!-- works like for each loop -->
         <li>Username: {{this.username}}, Age: {{this.age}}</li>
         {{/each}}
     </ul>

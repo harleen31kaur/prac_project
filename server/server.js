@@ -23,6 +23,10 @@ const port =process.env.PORT || 5000;
 
 app.set('view engine','hbs');
 
+//partials
+var hbs=require('hbs');
+hbs.registerPartials(__dirname+'/views/partials', function(err){});
+
 
 app.use(express.json());
 app.use(cors());
@@ -51,6 +55,11 @@ app.get("/allusers", (req, res) => {
         users: users
     });
 });
+
+
+//user registeration 
+app.use("/api/register", require("./routes/userRoutes"));
+
 
 //error handling middleware 
 app.use(errorHandler)

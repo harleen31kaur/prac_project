@@ -60,6 +60,9 @@ app.get("/allusers", (req, res) => {
 //user registeration 
 app.use("/api/register", require("./routes/userRoutes"));
 
+//doctor
+app.use("/api/details",require("./routes/doctorsDetails"));
+
 
 //error handling middleware 
 app.use(errorHandler)
@@ -68,3 +71,5 @@ app.use(errorHandler)
 app.listen(port,()=>{
     console.log(`server running on port http://localhost:${port}`);
 })
+
+

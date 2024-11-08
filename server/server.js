@@ -178,6 +178,11 @@ app.post('/profile', upload.single('avatar'), async (req, res) => {
         res.status(500).send("Error uploading file.");
     }
 });
+//user registeration 
+app.use("/api/register", require("./routes/userRoutes"));
+
+//doctor
+app.use("/api/details",require("./routes/doctorsDetails"));
 
 // Error handling middleware
 app.use(errorHandler);
